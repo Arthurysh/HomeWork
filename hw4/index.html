@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <title>HW4</title>
+    <style>
+        body {
+            padding: 20px 0 0 20px;
+            cursor: pointer;
+        }
+        
+        #field {
+            overflow: hidden;
+            width: 200px;
+            height: 150px;
+            border-top: 10px solid black;
+            border-right: 10px solid gray;
+            border-bottom: 10px solid gray;
+            border-left: 10px solid black;
+            background-color: #00FF00;
+            font: 10px/1.2 monospace;
+        }
+        
+        .triangle-right {
+            position: relative;
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 20px solid red;
+            text-indent: -20px;
+            font: 12px/1 monospace;
+        }
+        
+        .note {
+            position: fixed;
+            z-index: 1000;
+            padding: 5px;
+            border: 1px solid black;
+            background: white;
+            text-align: center;
+            font: italic 14px serif;
+        }
+        
+        blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid #ccc;
+            margin: 0 0 0 100px;
+            padding: .5em 10px;
+            quotes: "\201C""\201D""\2018""\2019";
+            display: inline-block;
+            white-space: pre;
+        }
+        
+        blockquote:before {
+            color: #ccc;
+            content: open-quote;
+            font-size: 4em;
+            line-height: .1em;
+            margin-right: .25em;
+            vertical-align: -.4em;
+        }
+        
+        #field {
+            width: 200px;
+            height: 150px;
+            border: 10px solid black;
+            background-color: #00FF00;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        #ball {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            transition: all 1s;
+        }
+        
+        .task-9 ul {
+            display: none;
+        }
+        
+        h3 {
+            margin: 0;
+            padding-bottom: .3em;
+            font-size: 1.1em;
+        }
+        
+        p {
+            margin: 0;
+            padding: 0 0 .5em;
+        }
+        
+        .pane {
+            background: #edf5e1;
+            padding: 10px 20px 10px;
+            border-top: solid 2px #c4df9b;
+        }
+        
+        .remove-button {
+            font-size: 110%;
+            color: darkred;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="height:2000px;">
+    <!-- TASK 2
+        <h2>Повідомлення знаходиться праворуч</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aspernatur quam ex eaque inventore quod voluptatem adipisci omnis nemo nulla fugit iste numquam ducimus cumque minima porro ea quidem maxime necessitatibus beatae labore soluta voluptatum
+        magnam consequatur sit laboriosam velit excepturi laborum sequi eos placeat et quia deleniti? Corrupti velit impedit autem et obcaecati fuga debitis nemo ratione iste veniam amet dicta hic ipsam unde cupiditate incidunt aut iure ipsum officiis
+        soluta temporibus.
+    </p> -->
+
+
+    <!-- TASK 3 
+        Клацніть будь-де для отримання координат у контексті вікна.
+    <br> Це для тестування, щоб перевірити результат, який ви отримали за допомогою JavaScript.
+    <br>
+    <div id="coords">(координати з'являться тут)</div>
+
+    <div id="field">
+
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    </div>
+
+    <div class="triangle-right" style="left:-20px;top:-176px">1</div>
+    <div class="triangle-right" style="left:-10px;top:-178px">3</div>
+    <div class="triangle-right" style="left:190px;top:-40px">4</div>
+    <div class="triangle-right" style="left:200px;top:-42px">2</div> -->
+
+
+    <!-- TASK 4 - TASK 6
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit sint atque dolorum fuga ad incidunt voluptatum error fugiat animi amet! Odio temporibus nulla id unde quaerat dignissimos enim nisi rem provident molestias sit tempore omnis recusandae
+        esse sequi officia sapiente.</p>
+
+    <blockquote>
+        Teacher: Why are you late? Student: There was a man who lost a hundred dollar bill. Teacher: That's nice. Were you helping him look for it? Student: No. I was standing on it.
+    </blockquote>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit sint atque dolorum fuga ad incidunt voluptatum error fugiat animi amet! Odio temporibus nulla id unde quaerat dignissimos enim nisi rem provident molestias sit tempore omnis recusandae
+        esse sequi officia sapiente.</p> -->
+
+
+    <!-- TASK 8 
+        Натисніть поле для переміщення м'яча.
+    <br> М'яч не повинен виходити за межі поля.
+    <div id="field">
+        <img src="https://ru.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    </div> -->
+
+
+    <!-- TASK 9
+    <div class="task-9">
+        <span id="button"> ▶ Солодощі (натисни мене)!</span>
+        <ul>
+            <li> Тістечко </li>
+            <li> Пончик </li>
+            <li> Мед </li>
+        </ul>
+    </div> -->
+
+
+    <!-- TASK 10
+        <div>
+        <div class="pane">
+            <h3>Кінь</h3>
+            <p>Кінь є одним із двох підвидів Equus ferus, що існує. Це парнокопитний ссавець, що належить до таксономічної родини Equidae. За останні 45-55 мільйонів років кінь еволюціонував із маленької багатопалої істоти, Eohippus, до великої однопалої
+                тварини сучасності.</p>
+        </div>
+        <div class="pane">
+            <h3>Осел</h3>
+            <p>Ішак або осел (Equus africanus asinus) є одомашненим представником сімейства коней, Equidae. Диким предком осла є африканський дикий осел E. africanus. Осел використовувався як робоча тварина щонайменше 5000 років.</p>
+        </div>
+        <div class="pane">
+            <h3>Кіт</h3>
+            <p>Домашня кішка (лат. Felis catus) -- невеликий, типово пухнастий, хижий ссавець. Їх часто називають домашніми кішками, коли вони проживають з людьми, або просто кішками, коли нема потреби відрізняти їх від інших котячих. Люди часто цінують
+                кішок за товариські стосунки й за їх здатність полювати на шкідників.
+            </p>
+        </div>
+    </div> -->
+
+
+    <!-- TASK 11 
+        <select id="genres">
+        <option value="rock">Рок</option>
+        <option value="blues" selected>Блюз</option>
+     </select> -->
+</body>
+
+</html>
